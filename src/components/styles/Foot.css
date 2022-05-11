@@ -1,0 +1,9 @@
+.foot {
+  height: 170px;
+  width: 100%;
+  background-color: var(--color-theme2);
+  border-top: 1px solid rgba(0, 0, 0, 0.089);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

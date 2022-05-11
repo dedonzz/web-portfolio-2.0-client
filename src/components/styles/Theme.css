@@ -1,0 +1,25 @@
+.theme-button {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  height: 50px;
+  width: 50px;
+  border-radius: 180px;
+  background-color: var(--color-theme3);
+  cursor: pointer;
+}
+
+.theme-button:hover {
+  height: 55px;
+  width: 55px;
+  transition: all 0.1s ease-in;
+}
+
+.theme-text {
+  position: fixed;
+  font-size: 1rem;
+  font-weight: 900;
+  right: 10px;
+  bottom: 60px;
+  transform: rotate(325deg);
+}

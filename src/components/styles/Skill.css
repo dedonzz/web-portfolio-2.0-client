@@ -1,0 +1,82 @@
+.skill {
+  margin: auto;
+  width: 50%;
+  padding: 20vh 0 10vh 0;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  z-index: 0;
+}
+
+.skill-intro {
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.skill-intro span {
+  color: var(--color-theme4);
+}
+
+.skill-default {
+  width: 100%;
+  margin: 1.5vh 0;
+  padding: 3vh 0;
+  border-radius: 0.5rem;
+  position: relative;
+  background-color: var(--color-theme2);
+  box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
+}
+
+.skill-default .skill-icon {
+  position: absolute;
+  top: 1vh;
+  left: 1rem;
+}
+
+.skill-default p {
+  position: absolute;
+  top: 2vh;
+  left: 4rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.skill-bar {
+  position: absolute;
+  left: 0;
+  bottom: 0rem;
+  height: 5px;
+  border-radius: 0.5rem;
+  background-color: var(--color-theme4);
+}
+
+.skill-r {
+  width: 90%;
+}
+
+.skill-mysql {
+  width: 60%;
+}
+
+.skill-js {
+  width: 80%;
+}
+
+.skill-frontend {
+  width: 80%;
+}
+
+.skill-data {
+  width: 90%;
+}
+
+@media screen and (max-width: 768px) {
+  .skill-icon {
+    display: none;
+  }
+  .skill-default p {
+    left: 1rem;
+  }
+}
