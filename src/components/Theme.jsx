@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Bounce from "react-reveal/Bounce";
 import "./styles/Theme.css";
 
