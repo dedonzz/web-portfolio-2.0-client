@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { Link } from "react-router-dom";
 import "./styles/Nav.css";
 
 const Nav = () => {
@@ -8,9 +9,9 @@ const Nav = () => {
 
   return (
     <div className="navbar">
-      <a href="/" className="logo">
+      <Link to="/" className="logo">
         Don WCJ
-      </a>
+      </Link>
       <ul className={navExpand ? "expand-nav" : "not-expand-nav"}>
         <div className="nav-list">
           <li className="nav-lista">
@@ -23,10 +24,10 @@ const Nav = () => {
             <a href="#experience">Experience</a>
           </li>
           <li className="nav-listb">
-            <a href="/">Project</a>
+            <Link to="/project">Project</Link>
           </li>
           <li className="nav-listb">
-            <a href="/">Blog</a>
+            <Link to="/blog">Blog</Link>
           </li>
         </div>
         <div
