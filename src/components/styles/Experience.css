@@ -29,7 +29,7 @@
   margin: 10px;
   padding: 20px 20px;
   background-color: var(--color-theme2);
-  box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
+  box-shadow: 0 1px 20px var(--color-theme1);
 }
 
 .experience-title {
