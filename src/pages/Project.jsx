@@ -1,5 +1,6 @@
 import React from "react";
 import Nav from "../components/Nav";
+import Foot from "../components/Foot";
 import "./styles/Project.css";
 
 const Project = () => {
@@ -8,24 +9,28 @@ const Project = () => {
       <Nav />
       <div className="project-container">
         <div className="project-cards">
-          <h2>Web Portfolio 1.0</h2>
-          <img src="assets/project-1.png" alt="project-1" />
-          <p>
-            My first portfolio webpage. Was deployed on AWS. Simple static
-            webpage.
-          </p>
-          <p>Tech: HTML, JS, CSS</p>
-        </div>
-        <div className="project-cards">
-          <h2>Web Portfolio 2.0</h2>
+          <h2>Web Portfolio</h2>
           <img src="assets/project-2.png" alt="project-2" />
           <p>
-            Based on portfolio 1.0. Migrate to react.js with additional features
-            like change theme color, multiple pages, etc...
+            Migrate old portfolio static website to react.js framework with
+            features below: <br />
+            <ul>
+              <li>Change theme color</li>
+              <li>multiple pages linked by reac router</li>
+              <li>blog linked to mongodb (developing)</li>
+            </ul>
           </p>
-          <p>Tech: HTML, CSS(SCSS), JS(React), react-route, react-reveal</p>
+          <p>
+            Tech used:
+            <ul>
+              <li>HTML, CSS(SCSS), JS(React)</li>
+              <li>react-router, react-reveal</li>
+              <li>mongodb, express, node as backend</li>
+            </ul>
+          </p>
         </div>
       </div>
+      <Foot />
     </div>
   );
 };

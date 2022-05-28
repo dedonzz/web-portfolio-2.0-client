@@ -1,6 +1,7 @@
 .foot {
-  height: 170px;
+  height: 180px;
   width: 100%;
+  bottom: 0;
   background-color: var(--color-theme2);
   border-top: 1px solid rgba(0, 0, 0, 0.089);
   display: flex;
