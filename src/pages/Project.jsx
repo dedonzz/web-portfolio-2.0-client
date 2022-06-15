@@ -14,13 +14,13 @@ const Project = () => {
             <h2>Web Portfolio</h2>
             <img src="assets/project-2.png" alt="project-2" />
             <p>
-              Migrate old portfolio static website to react.js framework with
-              features below: <br />
+              Migrate old portfolio website to react.js framework with features
+              below: <br />
             </p>
             <ul>
-              <li>Change theme color</li>
-              <li>multiple pages linked by reac router</li>
-              <li>blog linked to mongodb (developing)</li>
+              <li>Change web's theme color</li>
+              <li>Personal blog with markdown and latex editor</li>
+              <li>Full responsive</li>
             </ul>
             <p>Tech used:</p>
             <ul>
