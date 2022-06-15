@@ -24,7 +24,7 @@
 }
 
 .experience-card {
-  height: 15rem;
+  height: auto;
   width: 20rem;
   margin: 10px;
   padding: 20px 20px;

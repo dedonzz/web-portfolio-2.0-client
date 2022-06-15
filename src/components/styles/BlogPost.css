@@ -1,0 +1,65 @@
+.blog-post .nav-lista {
+  visibility: hidden;
+}
+
+.blog-post .blog-post-delete {
+  margin: 0.5rem 2rem;
+}
+
+.blog-post .blog-post-delete input {
+  margin: 20px;
+  width: 20rem;
+}
+
+.blog-post .blog-post-delete button {
+  margin: 20px;
+  height: 2rem;
+  width: 10rem;
+  background-color: var(--color-theme1);
+  border: none;
+  color: white;
+  font-weight: 600;
+}
+
+.blog-post .blog-post-delete button:hover {
+  background-color: var(--color-theme3);
+  transition: ease-in 0.5s;
+  cursor: pointer;
+}
+
+.blog-post .blog-post-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blog-post .blog-post-card {
+  margin: 1rem;
+  padding: 1rem;
+  height: auto;
+  width: 90%;
+  background-color: var(--color-theme2);
+  box-shadow: 0px 1px 20px var(--color-theme1);
+}
+
+.blog-post .blog-post-title h2 {
+  margin: 1rem 1rem;
+  text-align: left;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-theme3);
+}
+
+.blog-post .blog-post-title h3 {
+  margin: 1rem 1rem;
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-theme4);
+}
+
+.blog-post .blog-post-markdown {
+  margin: 1rem 1rem;
+  font-size: 0.75rem;
+  color: var(--color-theme3);
+}

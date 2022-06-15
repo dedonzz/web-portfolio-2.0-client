@@ -36,6 +36,7 @@
 }
 
 .skill-default p {
+  margin: 0;
   position: absolute;
   top: 2vh;
   left: 4rem;
@@ -77,6 +78,7 @@
     display: none;
   }
   .skill-default p {
+    margin: 0;
     left: 1rem;
   }
 }

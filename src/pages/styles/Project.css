@@ -3,7 +3,6 @@
 }
 
 .project .project-container {
-  height: 70vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -19,7 +18,7 @@
 
 .project .project-container .project-cards {
   margin: 1rem 5rem 3rem 5rem;
-  height: 25rem;
+  height: auto;
   width: 22rem;
   background-color: var(--color-theme2);
   -webkit-box-shadow: 0px 1px 20px var(--color-theme1);
@@ -41,7 +40,14 @@
   border: 1px solid var(--color-theme1);
 }
 
-.project .project-container .project-cards P {
+.project .project-container .project-cards p {
+  margin: 0.5rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--color-theme3);
+}
+
+.project .project-container .project-cards ul {
   margin: 0.5rem 1rem;
   font-size: 0.75rem;
   font-weight: 400;

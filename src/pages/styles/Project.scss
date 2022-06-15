@@ -3,14 +3,13 @@
     visibility: hidden;
   }
   .project-container {
-    height: 70vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
     .project-cards {
       margin: 1rem 5rem 3rem 5rem;
-      height: 25rem;
+      height: auto;
       width: 22rem;
       background-color: var(--color-theme2);
       box-shadow: 0px 1px 20px var(--color-theme1);
@@ -27,7 +26,13 @@
         height: auto;
         border: 1px solid var(--color-theme1);
       }
-      P {
+      p {
+        margin: 0.5rem 1rem;
+        font-size: 0.75rem;
+        font-weight: 400;
+        color: var(--color-theme3);
+      }
+      ul {
         margin: 0.5rem 1rem;
         font-size: 0.75rem;
         font-weight: 400;

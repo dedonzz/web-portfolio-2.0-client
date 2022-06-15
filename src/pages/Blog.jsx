@@ -1,73 +1,43 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Axios from "axios";
 import Nav from "../components/Nav";
+import Foot from "../components/Foot";
+import Zoom from "react-reveal/Zoom";
 import "./styles/Blog.css";
 
 const Blog = () => {
-  const [listOfPosts, setListOfPosts] = useState([
-    //{ title: "test", data: 2022, text: "test" },
-  ]);
-  const [title, setTitle] = useState("");
-  const [date, setDate] = useState(0);
-  const [text, setText] = useState("");
+  const [listOfPosts, setListOfPosts] = useState([]);
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/getPost").then((response) => {
-      console.log(response.data);
-      setListOfPosts(response.data);
-    });
+    Axios.get("https://web-portfolio-2-blog.herokuapp.com/getPost").then(
+      (response) => {
+        setListOfPosts(response.data);
+      }
+    );
   }, []);
-
-  const createPost = () => {
-    Axios.post("http://localhost:3001/createPost", {
-      title,
-      date,
-      text,
-    }).then((response) => {
-      setListOfPosts([...listOfPosts, { title, date, text }]);
-      alert("Post Updated");
-    });
-  };
 
   return (
     <div className="blog">
       <Nav />
-      <div className="blog-display">
-        {listOfPosts.map((post) => {
-          return (
-            <div>
-              <h1>title: {post.title}</h1>
-              <h1>date: {post.date}</h1>
-              <h1>text: {post.text}</h1>
-            </div>
-          );
-        })}
-      </div>
-      <div>
-        <input
-          type="text"
-          placeholder="Title..."
-          onChange={(event) => {
-            setTitle(event.target.value);
-          }}
-        />
-        <input
-          type="number"
-          placeholder="Date..."
-          onChange={(event) => {
-            setDate(event.target.value);
-          }}
-        />
-        <input
-          type="text"
-          placeholder="Text..."
-          onChange={(event) => {
-            setText(event.target.value);
-          }}
-        />
-        <button onClick={createPost}>Create Post</button>
-      </div>
+      <Zoom>
+        <div className="blog-display">
+          {listOfPosts.map((post) => {
+            return (
+              <Link to={`./${post._id}`} className="blog-cards" key={post._id}>
+                <h2>{post.title}</h2>
+                <h3>{post.date}</h3>
+                <p>{post.text}</p>
+              </Link>
+            );
+          })}
+        </div>
+      </Zoom>
+      <Link to="../createPost" className="button">
+        create new post
+      </Link>
+      <Foot />
     </div>
   );
 };

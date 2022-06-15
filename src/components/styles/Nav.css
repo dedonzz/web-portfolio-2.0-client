@@ -7,6 +7,7 @@
   top: 0;
   height: 60px;
   z-index: 10;
+  display: block;
 }
 
 a,
@@ -28,6 +29,7 @@ a:active {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  list-style: none;
 }
 
 .navbar li {
