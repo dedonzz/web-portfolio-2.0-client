@@ -35,7 +35,7 @@ const Blog = () => {
           },
         }
       )
-        .then(alert("Post Deleted."))
+        .then((response) => alert(response.data))
         .then(navigate("../blog"))
         .catch((e) => {
           alert(e.response.data);
