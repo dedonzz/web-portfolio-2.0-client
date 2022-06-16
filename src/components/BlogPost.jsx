@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Axios from "axios";
 import Nav from "../components/Nav";
 import Foot from "../components/Foot";
@@ -15,7 +15,6 @@ const Blog = () => {
   const [post, setPost] = useState([]);
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
-  const navigate = useNavigate();
   const params = useParams();
 
   const editPost = () => {
@@ -36,7 +35,6 @@ const Blog = () => {
         }
       )
         .then((response) => alert(response.data))
-        .then(navigate("../blog"))
         .catch((e) => {
           alert(e.response.data);
         });
