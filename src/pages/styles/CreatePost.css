@@ -32,6 +32,10 @@
   border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
+.create-post .create-post-input .create-post-markdown .katex-mathml {
+  position: fixed;
+}
+
 .create-post .create-post-form {
   margin: 2rem 4rem;
 }

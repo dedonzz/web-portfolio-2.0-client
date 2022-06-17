@@ -21,6 +21,9 @@
       width: 45%;
       overflow: scroll;
       border: 1px solid rgba(0, 0, 0, 0.5);
+      .katex-mathml {
+        position: fixed;
+      }
     }
   }
   .create-post-form {
