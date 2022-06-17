@@ -1,6 +1,5 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
 import Axios from "axios";
 import Nav from "../components/Nav";
 import Foot from "../components/Foot";
@@ -16,10 +15,6 @@ const Blog = () => {
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const params = useParams();
-
-  const editPost = () => {
-    alert("Developing...");
-  };
 
   const deletePost = () => {
     if (username === "" || password === "") {
@@ -103,7 +98,9 @@ const Blog = () => {
           required
         />
         <button onClick={deletePost}>delete post</button>
-        <button onClick={editPost}>edit post</button>
+        <Link to={`../blog/updatePost/${params.id}`} className="button">
+          <button>edit post</button>
+        </Link>
       </div>
       <Foot />
     </div>

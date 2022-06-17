@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import Axios from "axios";
 import Nav from "../components/Nav";
 import ReactMarkdown from "react-markdown";
@@ -6,7 +7,7 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import "katex/dist/katex.min.css";
-import "./styles/CreatePost.css";
+import "./styles/UpdatePost.css";
 
 const CreatePost = () => {
   const [username, setUsername] = useState("");
@@ -14,8 +15,9 @@ const CreatePost = () => {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState(0);
   const [text, setText] = useState("");
+  const params = useParams();
 
-  const createPost = () => {
+  const updatePost = () => {
     if (
       username === "" ||
       password === "" ||
@@ -25,15 +27,18 @@ const CreatePost = () => {
     ) {
       alert("Please fill in all blank.");
     } else {
-      Axios.post("https://web-portfolio-2-blog.herokuapp.com/createPost", {
-        username,
-        password,
-        title,
-        date,
-        text,
-      })
+      Axios.put(
+        `https://web-portfolio-2-blog.herokuapp.com/updatePost/${params.id}`,
+        {
+          username,
+          password,
+          title,
+          date,
+          text,
+        }
+      )
         .then((response) => {
-          alert("Post Created.");
+          alert(response.data);
         })
         .catch((e) => {
           alert(e.response.data);
@@ -41,21 +46,31 @@ const CreatePost = () => {
     }
   };
 
+  useEffect(() => {
+    Axios.get(
+      `https://web-portfolio-2-blog.herokuapp.com/getPost/${params.id}`
+    ).then((response) => {
+      setTitle(response.data.title);
+      setDate(response.data.date);
+      setText(response.data.text);
+    });
+  }, [params.id]);
+
   return (
-    <div className="create-post">
+    <div className="update-post">
       <Nav />
-      <div className="create-post-input">
+      <div className="update-post-input">
         <textarea
           autoFocus
           placeholder="Write here..."
-          className="create-post-textarea"
+          className="update-post-textarea"
           value={text}
           onChange={(event) => {
             setText(event.target.value);
           }}
         />
         <ReactMarkdown
-          className="create-post-markdown"
+          className="update-post-markdown"
           children={text}
           remarkPlugins={[remarkMath]}
           rehypePlugins={[rehypeKatex]}
@@ -78,11 +93,12 @@ const CreatePost = () => {
           }}
         />
       </div>
-      <div className="create-post-form">
-        <div className="create-post-form-one">
+      <div className="update-post-form">
+        <div className="update-post-form-one">
           <input
             type="text"
             placeholder="Title..."
+            value={title}
             onChange={(event) => {
               setTitle(event.target.value);
             }}
@@ -91,6 +107,7 @@ const CreatePost = () => {
           <input
             type="number"
             placeholder="Date..."
+            value={date}
             onChange={(event) => {
               setDate(event.target.value);
             }}
@@ -113,7 +130,7 @@ const CreatePost = () => {
           }}
           required
         />
-        <button onClick={createPost}>Create Post</button>
+        <button onClick={updatePost}>Update Post</button>
       </div>
     </div>
   );
