@@ -7,7 +7,7 @@ import Project from "./pages/Project";
 import CreatePost from "./pages/CreatePost";
 import BlogPost from "./components/BlogPost";
 import UpdatePost from "./pages/UpdatePost";
-// import "./Reset.css";
+import "./Reset.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
