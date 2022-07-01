@@ -12,7 +12,7 @@ const Project = () => {
         <Zoom>
           <div className="project-cards">
             <h2>Web Portfolio</h2>
-            <img src="assets/project-2.png" alt="project-2" />
+            <img src="assets/project-1.png" alt="project-1" />
             <p>
               Migrate old portfolio website to react.js framework with features
               below: <br />
