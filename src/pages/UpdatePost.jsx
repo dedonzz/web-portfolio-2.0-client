@@ -18,25 +18,16 @@ const CreatePost = () => {
   const params = useParams();
 
   const updatePost = () => {
-    if (
-      username === "" ||
-      password === "" ||
-      title === "" ||
-      date === 0 ||
-      text === ""
-    ) {
+    if (username === "" || password === "" || title === "" || date === 0 || text === "") {
       alert("Please fill in all blank.");
     } else {
-      Axios.put(
-        `https://web-portfolio-2-blog.herokuapp.com/updatePost/${params.id}`,
-        {
-          username,
-          password,
-          title,
-          date,
-          text,
-        }
-      )
+      Axios.put(` https://us-central1-don-personal-portfolio.cloudfunctions.net/app/updatePost/${params.id}`, {
+        username,
+        password,
+        title,
+        date,
+        text,
+      })
         .then((response) => {
           alert(response.data);
         })
@@ -47,13 +38,13 @@ const CreatePost = () => {
   };
 
   useEffect(() => {
-    Axios.get(
-      `https://web-portfolio-2-blog.herokuapp.com/getPost/${params.id}`
-    ).then((response) => {
-      setTitle(response.data.title);
-      setDate(response.data.date);
-      setText(response.data.text);
-    });
+    Axios.get(` https://us-central1-don-personal-portfolio.cloudfunctions.net/app/getPost/${params.id}`).then(
+      (response) => {
+        setTitle(response.data.title);
+        setDate(response.data.date);
+        setText(response.data.text);
+      }
+    );
   }, [params.id]);
 
   return (

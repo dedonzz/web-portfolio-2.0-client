@@ -16,16 +16,10 @@ const CreatePost = () => {
   const [text, setText] = useState("");
 
   const createPost = () => {
-    if (
-      username === "" ||
-      password === "" ||
-      title === "" ||
-      date === 0 ||
-      text === ""
-    ) {
+    if (username === "" || password === "" || title === "" || date === 0 || text === "") {
       alert("Please fill in all blank.");
     } else {
-      Axios.post("https://web-portfolio-2-blog.herokuapp.com/createPost", {
+      Axios.post(" https://us-central1-don-personal-portfolio.cloudfunctions.net/app/createPost", {
         username,
         password,
         title,

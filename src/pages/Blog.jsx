@@ -14,9 +14,7 @@ const Blog = () => {
 
   const fetchBlog = async () => {
     try {
-      await Axios.get(
-        "https://web-portfolio-2-blog.herokuapp.com/getPost"
-      ).then((response) => {
+      await Axios.get(" https://us-central1-don-personal-portfolio.cloudfunctions.net/app/getPost").then((response) => {
         setListOfPosts(response.data);
       });
       setLoading(true);
@@ -37,11 +35,7 @@ const Blog = () => {
           {loading ? (
             listOfPosts.map((post) => {
               return (
-                <Link
-                  to={`./${post._id}`}
-                  className="blog-cards"
-                  key={post._id}
-                >
+                <Link to={`./${post._id}`} className="blog-cards" key={post._id}>
                   <h2>{post.title}</h2>
                   <h3>{post.date}</h3>
                   <p>{post.text}</p>

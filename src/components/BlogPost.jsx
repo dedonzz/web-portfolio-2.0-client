@@ -20,15 +20,12 @@ const Blog = () => {
     if (username === "" || password === "") {
       alert("Please fill in all blank.");
     } else {
-      Axios.delete(
-        `https://web-portfolio-2-blog.herokuapp.com/getPost/${params.id}/delete`,
-        {
-          data: {
-            username: username,
-            password: password,
-          },
-        }
-      )
+      Axios.delete(` https://us-central1-don-personal-portfolio.cloudfunctions.net/app/getPost/${params.id}/delete`, {
+        data: {
+          username: username,
+          password: password,
+        },
+      })
         .then((response) => alert(response.data))
         .catch((e) => {
           alert(e.response.data);
@@ -37,11 +34,11 @@ const Blog = () => {
   };
 
   useEffect(() => {
-    Axios.get(
-      `https://web-portfolio-2-blog.herokuapp.com/getPost/${params.id}`
-    ).then((response) => {
-      setPost(response.data);
-    });
+    Axios.get(` https://us-central1-don-personal-portfolio.cloudfunctions.net/app/getPost/${params.id}`).then(
+      (response) => {
+        setPost(response.data);
+      }
+    );
   }, [params.id]);
 
   return (
